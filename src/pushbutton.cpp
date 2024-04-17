@@ -2,6 +2,8 @@
 // Copyright © 2024, Basyair Fathul
 // MIT License
 
+#pragma once
+
 #include "Arduino.h"
 #include "pushbutton.h"
 
