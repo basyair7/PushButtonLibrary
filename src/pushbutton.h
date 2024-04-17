@@ -8,18 +8,18 @@
 
 #include <Arduino.h>
 
-class variable {
+class variableMillis {
     protected:
-        uint8_t pinInit, modeInit;
         unsigned long lastTimePush = 0, lastTimeReset = 0;
 };
 
 class pushbutton {
     public:
+        uint8_t pinInit, modeInit;
         void init();
 };
 
-class PushButtonDigital: public pushbutton, protected variable {
+class PushButtonDigital: public pushbutton, protected variableMillis {
     private:
         uint8_t count;
         int countUnlimite;
@@ -32,7 +32,7 @@ class PushButtonDigital: public pushbutton, protected variable {
         void resetCount();
 };
 
-class PushButtonAnalog: public pushbutton, protected variable {
+class PushButtonAnalog: public pushbutton, protected variableMillis {
     private:
         uint8_t count;
         int countUnlimite;

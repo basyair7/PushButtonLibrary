@@ -82,7 +82,7 @@ uint8_t PushButtonAnalog::countPushButton(uint16_t valueAnalog, long delayPush, 
 }
 
 /*
- * count push button no reset (available for digital pins)
+ * count push button no reset (available for analog pins)
  * value analog (please check in serial monitor before use this function)
  * delayPush = delay for push
  * unlimite (no self reset count)
