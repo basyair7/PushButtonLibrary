@@ -1,5 +1,10 @@
+// Push Button Library
+// Copyright © 2024, Basyair Fathul
+// MIT License
+
+#pragma once
+
 #ifndef pushbutton_h
-#define pushbutton_h
 
 #include <Arduino.h>
 
