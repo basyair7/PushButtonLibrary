@@ -30,12 +30,12 @@ void pushbutton::init()
 uint8_t PushButtonDigital::countPushButton(long delayPush, long delayReset)
 {
     uint8_t buttonState = digitalRead(pinInit);
-    if ((unsigned long)(millis() - lastTimePush) >= delayPush && buttonState == HIGH)
+    if ((unsigned long)(millis() - lastTimePush) >= (long unsigned int)delayPush && buttonState == HIGH)
     {
         lastTimePush = millis();
         count++;
     }
-    if ((unsigned long)(millis() - lastTimeReset) >= delayReset && buttonState == LOW)
+    if ((unsigned long)(millis() - lastTimeReset) >= (long unsigned int)delayReset && buttonState == LOW)
     {
         lastTimeReset = millis();
         count = 0;
@@ -51,7 +51,7 @@ uint8_t PushButtonDigital::countPushButton(long delayPush, long delayReset)
 */
 int PushButtonDigital::countPushNoReset(long delayPush) {
     uint8_t buttonState = digitalRead(pinInit);
-    if((unsigned long) (millis() - lastTimePush) >= delayPush && buttonState == HIGH) {
+    if((unsigned long) (millis() - lastTimePush) >= (long unsigned int)delayPush && buttonState == HIGH) {
         lastTimePush = millis();
         countUnlimite++;
     } 
@@ -67,12 +67,12 @@ int PushButtonDigital::countPushNoReset(long delayPush) {
 uint8_t PushButtonAnalog::countPushButton(uint16_t valueAnalog, long delayPush, long delayReset)
 {
     uint16_t buttonValue = analogRead(pinInit);
-    if ((unsigned long)(millis() - lastTimePush) >= delayPush && buttonValue == valueAnalog)
+    if ((unsigned long)(millis() - lastTimePush) >= (long unsigned int)delayPush && buttonValue == valueAnalog)
     {
         lastTimePush = millis();
         count++;
     }
-    if ((unsigned long)(millis() - lastTimeReset) >= delayReset && buttonValue != valueAnalog)
+    if ((unsigned long)(millis() - lastTimeReset) >= (long unsigned int)delayReset && buttonValue != valueAnalog)
     {
         lastTimeReset = millis();
         count = 0;
@@ -89,7 +89,7 @@ uint8_t PushButtonAnalog::countPushButton(uint16_t valueAnalog, long delayPush, 
 */
 int PushButtonAnalog::countPushNoReset(uint16_t valueAnalog, long delayPush) {
     uint16_t buttonValue = analogRead(pinInit);
-    if((unsigned long) (millis() - lastTimePush) >= delayPush && buttonValue == valueAnalog) {
+    if((unsigned long) (millis() - lastTimePush) >= (long unsigned int)delayPush && buttonValue == valueAnalog) {
         lastTimePush = millis();
         countUnlimite++;
     } 
